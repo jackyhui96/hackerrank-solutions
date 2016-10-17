@@ -14,13 +14,17 @@ public class Solution {
             int k = in.nextInt();
             int max = 0;
 
-            for(int i = 0; i < n; i++) {
-                for(int j = 0; j < n; j++) {
+            int i = 0;
+            while(i < n) {
+                int j = i+1;
+                while(j <= n) {
                     int num = i & j;
-                    if(num > max && num < k) {
+                    if(num > max && num < k){
                         max = num;
                     }
+                    j++;
                 }
+                i++;
             }
 
             System.out.println(max);
